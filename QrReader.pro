@@ -26,10 +26,14 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    myvideosurface.cpp \
+    myviewfinder.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    myvideosurface.h \
+    myviewfinder.h
 
 FORMS += \
         mainwindow.ui

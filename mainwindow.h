@@ -3,18 +3,14 @@
 
 #include <QMainWindow>
 #include <QZXing.h>
+#include <myviewfinder.h>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QLabel>
 
 namespace Ui {
 class MainWindow;
 }
-
-class QCamera;
-class QCameraViewfinder;
-class QCameraImageCapture;
-class QVBoxLayout;
-class QPushButton;
-class QTimer;
-class QLabel;
 
 class MainWindow : public QMainWindow
 {
@@ -28,12 +24,14 @@ public:
 private:
     Ui::MainWindow *ui;
     QWidget *widget;
-    QCamera *camera;
-    QCameraViewfinder *cameraViewfinder;
-    QCameraImageCapture *cameraImageCapture;
     QVBoxLayout *layout;
-    QTimer *timer;
+    QPushButton *copyPushButton;
     QLabel *resultLabel;
+    myViewFinder *m_viewFinder;
+
+public slots:
+    void refreshResultLabel(QString &result);
+    void copyResultToClipboard();
 };
 
 #endif // MAINWINDOW_H
